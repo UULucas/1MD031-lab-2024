@@ -1,14 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Cormorant:wght@700&display=swap');
+@import 'https://fonts.googleapis.com/css?family=Pacifico|Dosis';
 body {
     font-size: 12pt;
 }
 
 p {
-    color: red;
+    /* color: white; */
 }
 
 h1 {
-    font-family: 'Agbalumo';
+    font-family: 'Inter Semi Bold', sans-serif;
     font-size: 36pt;
 }
 main, header, footer, nav ul {
@@ -61,4 +62,18 @@ nav li {
 .Master {
     color: green;
     font-weight: bold;
+}
+
+.classname {
+    color: #000000;
+}
+
+#idname {
+    text-transform: uppercase;
+}
+
+
+.customers {
+    color: #ffffff;
+    background-color: black;
 }
