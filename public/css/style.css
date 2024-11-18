@@ -76,4 +76,25 @@ nav li {
 .customers {
     color: #ffffff;
     background-color: black;
+    margin: 20px;
+}
+
+button:hover {
+    background-color: blanchedalmond;
+    color: black;
+    cursor: pointer;
+}
+
+#Burgers {
+    margin: 20px;
+    border: 10px solid #000000;
+    padding: 10px;
+}
+
+#order\ button {
+    margin: 5px;
+}
+
+.spaced {
+    margin: 10px;
 }
