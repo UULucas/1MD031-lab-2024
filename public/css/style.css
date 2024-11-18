@@ -27,8 +27,8 @@ main {
     margin: 1em;
 } */
 
+
 header {
-    background-image: url("../img/polacks.jpg");
     background-size: cover;
     overflow: hidden;
     width: 100%;
@@ -97,4 +97,10 @@ button:hover {
 
 .spaced {
     margin: 10px;
+}
+
+div.textImg {
+    position: static;
+    top: 8px;
+    left: 16px;
 }
