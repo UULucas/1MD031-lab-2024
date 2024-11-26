@@ -29,17 +29,19 @@ main {
 
 
 #header {
-    position: relative; /* Gör headern en referenspunkt för absolut positionering */
+    position: relative;
     width: 100%;
-    max-width: 600px; /* Begränsar bredden på headern (valfritt) */
-    margin: auto; /* Centrerar headern på sidan */
-    overflow: hidden; /* Hindrar innehåll från att gå utanför headern */
+    max-width: 600px;
+    margin: auto;
+    overflow: hidden;
 }
 
 #headerImg {
     width: 100%;
-    display: block; /* Tar bort oönskat mellanrum under bilden */
-    opacity: 0.5; /* Gör bilden halvtransparent */
+    height: auto;
+    display: block;
+    opacity: 0.5;
+    padding: 1em;
 }
 
 header h1 {
@@ -76,6 +78,7 @@ nav li {
 
 #idname {
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 
@@ -92,8 +95,10 @@ button:hover {
 }
 
 #Burgers {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 11em);
     margin: 20px;
-    border: 10px solid #000000;
+    border: 10px solid #B99976;
     padding: 10px;
 }
 
@@ -107,12 +112,12 @@ button:hover {
 
 .textImg {
     position: absolute;
-    top: 50%; /* Placera texten i mitten vertikalt */
-    left: 50%; /* Placera texten i mitten horisontellt */
-    transform: translate(-50%, -50%); /* Centrerar texten exakt */
-    color: black; /* Gör texten läsbar */
-    font-size: 2rem; /* Justera efter behov */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: black;
+    font-size: 2rem;
     font-weight: bold;
-    text-align: center; /* För centrering av texten */
-    pointer-events: none; /* Förhindrar att texten kan interageras med */
+    text-align: center;
+    pointer-events: none;
 }
