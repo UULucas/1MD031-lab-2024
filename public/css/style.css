@@ -28,12 +28,18 @@ main {
 } */
 
 
-header {
-    background-size: cover;
-    overflow: hidden;
+#header {
+    position: relative; /* Gör headern en referenspunkt för absolut positionering */
     width: 100%;
-    height: 200px;
-    opacity: 0.5;
+    max-width: 600px; /* Begränsar bredden på headern (valfritt) */
+    margin: auto; /* Centrerar headern på sidan */
+    overflow: hidden; /* Hindrar innehåll från att gå utanför headern */
+}
+
+#headerImg {
+    width: 100%;
+    display: block; /* Tar bort oönskat mellanrum under bilden */
+    opacity: 0.5; /* Gör bilden halvtransparent */
 }
 
 header h1 {
@@ -99,8 +105,14 @@ button:hover {
     margin: 10px;
 }
 
-div.textImg {
-    position: static;
-    top: 8px;
-    left: 16px;
+.textImg {
+    position: absolute;
+    top: 50%; /* Placera texten i mitten vertikalt */
+    left: 50%; /* Placera texten i mitten horisontellt */
+    transform: translate(-50%, -50%); /* Centrerar texten exakt */
+    color: black; /* Gör texten läsbar */
+    font-size: 2rem; /* Justera efter behov */
+    font-weight: bold;
+    text-align: center; /* För centrering av texten */
+    pointer-events: none; /* Förhindrar att texten kan interageras med */
 }
