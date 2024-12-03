@@ -77,6 +77,14 @@ import menu from '../assets/menu.json'
 
 const socket = io("localhost:3000");
 
+function MenuItem(name, kCal, url, gluten, lactose) {
+  this.name = name;
+  this.kCal = kCal;
+  this.url = url;
+  this.gluten = gluten;
+  this.lactose = lactose;
+}
+
 const burgersArray = [
     // ...menu kmr göra att varje burgare i jsonen blir ett eget objekt i burgersArray
     ...menu
@@ -128,6 +136,8 @@ export default {
       console.log("Order Details:");
       console.log("Name:", this.fullName);
       console.log("Email:", this.email);
+      console.log("Street:", this.street);
+      console.log("House:", this.house);
       console.log("Payment Method:", this.paymentMethod);
       console.log("Gender:", this.gender);
       console.log("Location:", this.location);
@@ -165,7 +175,7 @@ body {
 }
 
 p {
-
+  /* color: white; */
 }
 
 h1 {
