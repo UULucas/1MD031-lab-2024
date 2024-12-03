@@ -1,104 +1,13 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" type="text/css" href="public/css/style.css">
-    <title>Learning frontend</title>
-    <meta charset="utf-8"/>
-</head>
-<body>
-<header id="header">
-    <div class="textImg">Burgers Online</div>
-    <img src="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/fast-food-design-template-486715096606ce499231c2736a6effba_screen.jpg?ts=1644097555" id="headerImg">
-</header>
-
-<main>
-    <section id="Burgers">
-    <div class="spaced">
-        <section>
-            <h1>KFC Burger</h1>
-        </section>
-        <img src="https://static.vecteezy.com/system/resources/thumbnails/022/911/694/small_2x/cute-cartoon-burger-icon-free-png.png" alt="span"
-             title="KRFC Burger" style="width: 200px">
-        <ul>
-            <li><section class="classname">Contains <span id="idname">gluten</span></section></li>
-            <li>Contains red onions</li>
-            <li>Contains gochujang</li>
-        </ul>
-    </div>
-    <div class="spaced">
-        <section>
-            <h1>OG Burger</h1>
-        </section>
-        <img src="https://www.burgerandsauce.com/wp-content/uploads/2021/02/burger-and-suace-chicken-burger-3000px-2.1.png" alt="span"
-             title="OG Burger" style="width: 200px">
-        <ul>
-            <li><section class="classname">Contains <span id="idname">lactose</span></section></li>
-            <li>Contains red onions</li>
-            <li>Contains lactose</li>
-        </ul>
-    </div>
-    <div class="spaced">
-        <section>
-            <h1>Smashed Burger</h1>
-        </section>
-        <img src="https://lh5.googleusercontent.com/proxy/D8fDyPoDbzDV9mgGpTknMCObH456uxrslMpDm_WQlc3yKUxxcpvtGQMjdILDKpmtWcMFgedwfudpNbugw5bmBT1CeyADbGgkDbMVtSb16K4D" alt="span"
-             title="Smashed Burger" style="width: 200px">
-        <ul>
-            <li>Contains cheese</li>
-            <li>Contains onions</li>
-            <li><section class="classname">Contains <span id="idname">gluten</span></section></li>
-        </ul>
-    </div>
-    </section>
-    <section class="customers">
-        <h3>Customer Information</h3>
-        <p>This is where you provide necessary information</p>
-        <h4>Delivery Information:</h4>
-        <form>
-            <p>
-                <label for="full name">Full name</label><br>
-                <input type="text" id="full name" name="fn" required="required" placeholder="First- and Last name">
-            </p>
-            <p>
-                <label for="email">Email</label><br>
-                <input type="email" id="email" name="fn" required="required" placeholder="Email">
-            </p>
-            <p>
-                <label for="street">Street</label><br>
-                <input type="text" id="street" name="fn" required="required" placeholder="Street">
-            </p>
-            <p>
-                <label for="house">House</label><br>
-                <input type="number" id="house" name="fn" required="required" placeholder="House">
-            </p>
-            <p>
-                <label for="payment">Payment method</label><br>
-                <select id="payment method" name="rcp">
-                    <option>Cash</option>
-                    <option selected="selected">Credit card</option>
-                    <option>Gift card</option>
-                    <option>Crypto</option>
-                </select>
-            </p>
-            <p>Please select your gender</p>
-            <input type="radio" id="male" name="fn" required="required">
-            <label for="male">Male</label><br>
-            <input type="radio" id="female" name="fn" required="required">
-            <label for="female">Female</label><br>
-            <input type="radio" id="dnwts" name="fn" required="required">
-            <label for="male">Do not wish to specify</label><br>
-        </form>
-        <button type="submit" id="order button">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPucVEkm69jXUSPgj6AmN4O13flENs9v-L6Q&s" style="width: 20px">
-            Order
-        </button>
-    </section>
-</main>
-
-<footer>
-    <hr>
-    UU Burgers &copy;
-</footer>
-
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="/favicon.ico">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
 </html>

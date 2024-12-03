@@ -9,6 +9,10 @@
     <div id="map" v-on:click="addOrder">
     click here
     </div>
+  <input type="text" v-bind:value="yourVariable" v-on:input="yourVariable = $event.target.value">
+  <div>
+    {{ yourVariable }}
+  </div>
 </div>
 </template>
 
@@ -18,6 +22,23 @@ import io from 'socket.io-client'
 
 const socket = io("localhost:3000");
 
+function MenuItem(name, kCal, url, gluten, lactose) {
+  this.name = name;
+  this.kCal = kCal;
+  this.url = url;
+  this.gluten = gluten;
+  this.lactose = lactose;
+}
+
+const burgersArray = [
+  new MenuItem("Small Burger", 300, "small-burger.jpg", false, true),
+  new MenuItem("Standard Burger", 450, "standard-burger.jpg", true, true),
+  new MenuItem("Large Burger", 850, "large-burger.jpg", true, false)
+];
+
+console.log(burgersArray);
+
+
 export default {
   name: 'HomeView',
   components: {
@@ -25,10 +46,8 @@ export default {
   },
   data: function () {
     return {
-      burgers: [ {name: "small burger", kCal: 250},
-                 {name: "standard burger", kCal: 450},
-                 {name: "large burger", kCal: 850}
-               ]
+      burgers: burgersArray,
+      yourVariable: 'Välj en burgare',
     }
   },
   methods: {
