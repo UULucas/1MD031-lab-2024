@@ -3,6 +3,11 @@
       <div id="orderList">
         <div v-for="(order, key) in orders" v-bind:key="'order'+key">
           #{{ key }}: {{ order.orderItems.join(", ") }}
+          Items: {{ order.orderItems.join(", ") }}
+          Name: {{ order.details.customer.fullName }}
+          Email: {{ order.details.customer.email }}
+          Gender: {{ order.details.customer.gender }}
+          Payment Method: {{ order.details.customer.paymentMethod }}
         </div>
         <button v-on:click="clearQueue">Clear Queue</button>
       </div>
@@ -22,6 +27,9 @@
     data: function () {
       return {
         orders: null,
+        location: { x: 0,
+                    y: 0,
+        }
       }
     },
     created: function () {
@@ -48,6 +56,13 @@
     color:black;
     background: rgba(255,255,255, 0.5);
     padding: 1em;
+  }
+  #orderList div {
+    margin: 0.5em 0;
+    padding: 1em;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
   }
   #dots {
     position: relative;

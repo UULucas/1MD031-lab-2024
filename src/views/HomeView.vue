@@ -24,14 +24,6 @@
           <input type="email" id="email" v-model="email" required="required" placeholder="Email">
         </p>
         <p>
-          <label for="street">Street</label><br>
-          <input type="text" id="street" v-model="street" required="required" placeholder="Street">
-        </p>
-        <p>
-          <label for="house">House</label><br>
-          <input type="number" id="house" v-model="house" required="required" placeholder="House">
-        </p>
-        <p>
           <label for="payment">Payment method</label><br>
           <select id="payment method" v-model="paymentMethod">
             <option>Cash</option>
@@ -54,7 +46,24 @@
       </button>
     </section>
   </main>
-
+  <div class="map-container">
+    <div
+        id="dots"
+        class="map-background"
+        style="position: relative; width: 100%; height: 100%; border: 1px solid black;"
+        @click="setlocation"
+    >
+      <div
+          v-bind:style="{
+          position: 'absolute',
+          left: location.x + 'px',
+          top: location.y + 'px'
+        }"
+      >
+        T
+      </div>
+    </div>
+  </div>
   <footer>
     <hr>
     UU Burgers &copy;
@@ -67,14 +76,6 @@ import io from 'socket.io-client'
 import menu from '../assets/menu.json'
 
 const socket = io("localhost:3000");
-
-function MenuItem(name, kCal, url, gluten, lactose) {
-  this.name = name;
-  this.kCal = kCal;
-  this.url = url;
-  this.gluten = gluten;
-  this.lactose = lactose;
-}
 
 const burgersArray = [
     // ...menu kmr göra att varje burgare i jsonen blir ett eget objekt i burgersArray
@@ -98,26 +99,21 @@ export default {
       yourVariable: 'Välj en burgare',
       fullName: '',
       email: '',
-      street: '',
-      house: '',
       paymentMethod: '',
       gender: '',
       orderedBurgers: {},
+      location: { x: 0,
+                  y: 0 },
     }
   },
   methods: {
     getOrderNumber: function () {
       return Math.floor(Math.random()*100000);
     },
-    addOrder: function (event) {
-      var offset = {x: event.currentTarget.getBoundingClientRect().left,
-                    y: event.currentTarget.getBoundingClientRect().top};
-      socket.emit("addOrder", { orderId: this.getOrderNumber(),
-                                details: { x: event.clientX - 10 - offset.x,
-                                           y: event.clientY - 10 - offset.y },
-                                orderItems: ["Beans", "Curry"]
-                              }
-                 );
+    setlocation: function (event) {
+      this.location = { x: event.offsetX, y: event.offsetY };
+      },
+    addOrder: function () {
     },
     addToOrder: function (event) {
       if (event.amount > 0) {
@@ -132,10 +128,30 @@ export default {
       console.log("Order Details:");
       console.log("Name:", this.fullName);
       console.log("Email:", this.email);
-      console.log("Street:", this.street);
-      console.log("House:", this.house);
       console.log("Payment Method:", this.paymentMethod);
       console.log("Gender:", this.gender);
+      console.log("Location:", this.location);
+
+      const formattedOrderItems = [];
+      for (const name in this.orderedBurgers) {
+        const amount = this.orderedBurgers[name];
+        formattedOrderItems.push(name + " (" + amount + ")");
+      }
+      console.log(formattedOrderItems);
+
+      socket.emit("addOrder", {
+        orderId: this.getOrderNumber(),
+        details: { x: this.location.x, y: this.location.y,
+        customer: {
+          fullName: this.fullName,
+          email: this.email,
+          gender: this.gender,
+          paymentMethod: this.paymentMethod,
+        }},
+        orderItems: Object.keys(this.orderedBurgers),
+      });
+
+
     }
   },
 }
@@ -149,7 +165,7 @@ body {
 }
 
 p {
-  /* color: white; */
+
 }
 
 h1 {
@@ -264,5 +280,19 @@ button:hover {
   font-weight: bold;
   text-align: center;
   pointer-events: none;
+}
+
+.map-container {
+  width: 1920px;
+  height: 1078px;
+  overflow: scroll;
+}
+
+.map-background {
+  background: url("/img/polacks.jpg");
+  background-size: cover;
+  background-position: center;
+  width: 1920px;
+  height: 1078px
 }
 </style>
