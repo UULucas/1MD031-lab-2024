@@ -1,21 +1,21 @@
 [{
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
+    "name": "KFC Burger",
+    "kCal": 300,
+    "url": "https://static.vecteezy.com/system/resources/thumbnails/022/911/694/small_2x/cute-cartoon-burger-icon-free-png.png",
+    "lactose": true,
     "gluten": false
 },
 {
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
-    "lactose": false, 
-    "gluten": false
+    "name": "OG Burger",
+    "kCal": 450,
+    "url": "https://www.burgerandsauce.com/wp-content/uploads/2021/02/burger-and-suace-chicken-burger-3000px-2.1.png",
+    "lactose": true,
+    "gluten": true
 },
 {
-    "name": "Veggie Bliss", 
-    "kCal": 500, 
-    "url": "https://images-bonnier.imgix.net/files/ifo/production/20220412084608/Kødfri-burger-1.jpg?auto=compress,format&w=1024%201024w",
+    "name": "Smashed Burger",
+    "kCal": 850,
+    "url": "https://lh5.googleusercontent.com/proxy/D8fDyPoDbzDV9mgGpTknMCObH456uxrslMpDm_WQlc3yKUxxcpvtGQMjdILDKpmtWcMFgedwfudpNbugw5bmBT1CeyADbGgkDbMVtSb16K4D",
     "lactose": false, 
-    "gluten": false
+    "gluten": true
 }]
